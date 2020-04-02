@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import increment from "./actions/index";
+import { connect } from "react-redux";
 
 class MyClass extends Component {
     constructor(props) {
@@ -11,9 +13,11 @@ class MyClass extends Component {
 
     handleClick() {
         console.log("handleClick");
-        this.setState((state, props) => {
-            return { count: state.count + 1 };
-        });
+        // this.setState((state, props) => {
+        //     return { count: state.count + 1 };
+        // });
+        const { count } = this.props;
+        this.props.incrementCounter(count ? count : 1);
     }
 
     componentWillMount() {
@@ -31,13 +35,26 @@ class MyClass extends Component {
     render() {
         this.functions.add(this.handleClick);
         console.log(this.functions.size);
+        console.log("This", this);
         return (
             <div>
                 <button onClick={this.handleClick}>Click Me</button>
-                <div>Count is {this.state.count}</div>
+                <div>Count is {this.props.count}</div>
             </div>
         );
     }
 }
 
-export default MyClass;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        count: state.count,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        incrementCounter: (cnt) => dispatch(increment(cnt)),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MyClass);
