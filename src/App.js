@@ -6,6 +6,7 @@ import MyGrid from "./MyGrid";
 import MyComponent from "./MyComponent";
 import ParentComponent from "./ParentComponent";
 import MyClass from "./MyClass";
+import MyClass1 from "./MyClass1";
 
 class App extends Component {
   render() {
@@ -28,7 +29,7 @@ class App extends Component {
         <MyGrid></MyGrid>
         <MyComponent />
         <ParentComponent />
-        <MyClass />
+        <MyClass1 />
       </div>
     );
   }
