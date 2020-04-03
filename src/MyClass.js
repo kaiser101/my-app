@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import increment from "./actions/index";
+import incrementAsync from "./actions/index";
 import { connect } from "react-redux";
 
 class MyClass extends Component {
@@ -53,7 +53,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        incrementCounter: (cnt) => dispatch(increment(cnt)),
+        incrementCounter: (cnt) => dispatch(incrementAsync(cnt)),
     };
 };
 

@@ -7,4 +7,8 @@ const increment = (cnt) => {
     };
 };
 
-export default increment;
+const incrementAsync = (cnt) => (dispatch) => {
+    setTimeout(() => dispatch(increment(cnt)), 1000);
+};
+
+export default incrementAsync;

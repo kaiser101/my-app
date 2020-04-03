@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import increment from "./actions/index";
+import incrementAsync from "./actions/index";
 import { connect } from "react-redux";
 
 const MyClass1 = ({ count, incrementCounter }) => {
@@ -16,16 +16,10 @@ const MyClass1 = ({ count, incrementCounter }) => {
     );
 };
 
-const mapStateToProps = (state, ownProps) => {
-    return {
-        count: state.count,
-    };
-};
+const mapStateToProps = (state, ownProps) => ({ count: state.count });
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        incrementCounter: (cnt) => dispatch(increment(cnt)),
-    };
-};
+const mapDispatchToProps = (dispatch) => ({
+    incrementCounter: (cnt) => dispatch(incrementAsync(cnt)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyClass1);
