@@ -9,30 +9,31 @@ import MyClass from "./MyClass";
 import MyClass1 from "./MyClass1";
 
 class App extends Component {
-  render() {
-    const childProps = {
-      label: "Name",
-      value: "Sudharma",
-    };
+    render() {
+        const childProps = {
+            label: "Name",
+            value: "Sudharma",
+        };
 
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        return (
+            <div className="App">
+                <div className="App-header">
+                    <img src={logo} className="App-logo" alt="logo" />
+                    <h2>Welcome to React</h2>
+                </div>
+                <p className="App-intro">
+                    To get started, edit <code>src/App.js</code> and save to
+                    reload.
+                </p>
 
-        <Test {...childProps} />
-        <MyGrid></MyGrid>
-        <MyComponent />
-        <ParentComponent />
-        <MyClass1 />
-      </div>
-    );
-  }
+                <Test {...childProps} />
+                <MyGrid></MyGrid>
+                <MyComponent />
+                <ParentComponent />
+                <MyClass1 />
+            </div>
+        );
+    }
 }
 
 export default App;

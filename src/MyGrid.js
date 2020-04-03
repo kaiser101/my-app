@@ -38,30 +38,30 @@ const MyGrid = () => {
                     {
                         title: "Birth Year",
                         field: "birthYear",
-                        type: "numeric"
+                        type: "numeric",
                     },
                     {
                         title: "Birth Place",
                         field: "birthCity",
-                        lookup: { 34: "İstanbul", 63: "Şanlıurfa" }
-                    }
+                        lookup: { 34: "İstanbul", 63: "Şanlıurfa" },
+                    },
                 ]}
                 data={[
                     {
                         name: "Mehmet",
                         surname: "Baran",
                         birthYear: 1987,
-                        birthCity: 63
+                        birthCity: 63,
                     },
                     {
                         name: "Zerya Betül",
                         surname: "Baran",
                         birthYear: 2017,
-                        birthCity: 34
-                    }
+                        birthCity: 34,
+                    },
                 ]}
                 options={{
-                    grouping: true
+                    grouping: true,
                 }}
             />
         </div>
